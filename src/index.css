@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 /* code {
@@ -10,3 +10,223 @@ body {
     monospace;
 } */
 .flex{display: flex;}
+.cen{
+  margin: 0 auto;
+  width: 75rem;
+}
+#nav{
+  position: fixed;
+  box-shadow:0px 10px 10px 0px #464646;
+  opacity: 1;
+}
+.interest select{
+  height: 35px;
+  width: 305px;
+  left: 0px;
+  top: 0px;
+  border-radius: 17.5px;
+  border: 1px solid #BDBBBB;
+  outline: none;
+}
+.resetfilter{
+  height: 19px;
+  width: 76px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.12px;
+  letter-spacing: 0em;
+  text-align: left;
+  font-family: Avenir;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.eventcardmain h3{
+  height: 33px;
+  width: max-content;
+  color: #464646;
+  line-height: 38px;
+  font-size: 25px;
+  margin-bottom: 16px;
+  
+}
+.eventcard{
+  height: 244px;
+  /* width: 1064px; */
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+.eventcard img{
+  height: 196px;
+  border-radius: 12px;
+  /* width: 305px; */
+}
+.eventTitle{
+  height: 25px;
+  width: max-content;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: left;
+  font-size: 20px;
+  color: #464646;
+  margin-bottom: 8px;
+}
+.eventHost{
+  height: 20px;
+  width: max-content;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #807979;
+   margin-bottom: 20px;
+}
+.eventDate{
+  width: 485px;
+  height: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  font-size: 16px;
+  color: #464646;
+  margin-bottom: 8px;
+}
+.eventTime{
+  width: 508px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #464646;
+  margin-bottom: 8px;
+  height: 20px;
+}
+.eventLocation{
+  height: 20px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #464646;
+  margin-bottom: 24px;
+  width: 514px;
+}
+.eventcard p{
+  text-transform: capitalize;
+}
+.eventcard button{
+  color: white;
+  background-color: #4a5e84;
+  border-radius: 40px;
+  border: none;
+  width: 305px;
+  height: 58px;
+  margin-top: 58px;
+  outline: none;
+}
+#join{
+  color: white;
+  background-color: #4a5e84;
+  border-radius: 40px;
+  border: none;
+  width: 305px;
+  height: 58px;
+  margin-top: 58px;
+  outline: none;
+}
+#createBtn{
+  color: white;
+  background-color: #4a5e84;
+  border-radius: 40px;
+  border: none;
+  width: 205px;
+  height: 28px;
+  margin-top: 28px;
+  outline: none;
+}
+.aboutTab p{
+  font-size: 25px;
+  font-style: normal;
+  line-height: 38px;
+  letter-spacing: 0px;
+  text-align: center;
+  font-weight: 900;
+  cursor: pointer;
+  width: 532px;
+}
+#aboutheader{
+  width: 255px;
+  height: 35px;
+  font-weight: 900;
+  line-height: 46px;
+  color: #464646;
+  margin-bottom: 36px;
+  font-size: 31px;
+}
+.comment img{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 12px;
+}
+#commentCard{
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  font-size :16px;
+  line-height: 21.86px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  /* height: 60px;
+  width: 191px; */
+  padding: 16px 14px;
+}
+#readmore{
+  background-color: whitesmoke;
+  font-size: 12px;
+  color: "#464646";
+  margin-top: -30px;
+  margin-left: 170px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.attendCard img{
+  width: 197px;
+  height: 135px;
+  border-radius: 12px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.attendCard h4{
+  width: 261px;
+  height: 24px;
+  line-height: 27px;
+  color: #464646;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.attendCard p{
+  margin-bottom: 8px;
+}
+.attendCard{
+  border-top: 1.5px solid#464646;
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+.login{height: 100%; width: 100%; position: fixed; z-index: -100; overflow: hidden; background-image: url('https://images.unsplash.com/photo-1520483691742-bada60a1edd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'); 
+  background-size: cover; background-repeat: no-repeat;}
+.login input{width: 20rem; height: 2rem; margin-bottom: 20px; outline: none; padding: 10px; border: none; border-bottom: 1px solid #4a5e84;}
+.login-center{border-radius: 10px; padding: 30px; width: 800px; background-color: white; margin: 5rem auto;}
+.login-center button{border: none; padding: 10px 20px; background-color: #4a5e84; color: white; cursor: pointer; border-radius: 5px;}
+.login-head{text-align: center;}
+.login-form{margin: 0 auto; justify-content: space-evenly; padding-top: 30px;}
+.login-form p{padding-bottom: 10px;}
+#comm{outline: none; border: none; background-color: whitesmoke; border-radius: 10px; box-shadow: 2px 2px 2px 2px grey; padding: 5px;}
