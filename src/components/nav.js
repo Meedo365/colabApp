@@ -1,39 +1,36 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Store } from "../context/store";
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import React, { useEffect, useState } from "react";
+import Navbar from 'react-bootstrap/Navbar';
 import { Icon } from '@iconify/react';
 import logo from "../assets/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Navv() {
-    let store = useContext(Store);
     let history = useNavigate();
     let [none, SetNone] = useState('none');
+    let [userImage, setUser] = useState('');
     let [block, SetBlock] = useState('inline');
+    let id = localStorage.getItem('user_id');
+    let route = '/profile/' + id;
     useEffect(() => {
         check();
+        oneUser();
     }, [])
     let handleLogOut = async () => {
         let url = "https://colab-endpoints.herokuapp.com/logout";
         let data = { email: localStorage.getItem("user_email"), password: localStorage.getItem("user_password") };
         if (window.confirm('Are you sure?')) {
             let result = (await axios.put(url, data)).data;
-            let resulta = { msg: "Invalid Email or Password" };
-
             if (result.msg) {
                 // setError(resulta.msg);
                 console.log('error')
             } else {
-                // SetNone('none');
+                history("/");
                 localStorage.removeItem("user_id");
                 localStorage.removeItem("user_email");
                 localStorage.removeItem("user_password");
                 localStorage.removeItem("user_name");
                 window.location.reload();
-                history("/");
             }
         }
 
@@ -48,7 +45,12 @@ function Navv() {
             SetBlock('none')
         }
     };
-
+    let oneUser = () => {
+        let url = "https://colab-endpoints.herokuapp.com/user/" + id
+        fetch(url)
+            .then(e => e.json())
+            .then((res) => setUser(res.image))
+    };
 
     return <>
         <div className="cen">
@@ -66,16 +68,15 @@ function Navv() {
                     }} />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginLeft: '244px' }}>
-                    {/* <button style={{ display:
-                        width: '42px', height: '22px', border: 'none', background: 'none',
-                        cursor: 'pointer', marginRight: '40px', marginTop: '29px', marginBottom: '27px'
-                    }}>LogOut</button> */}
                     <Link to="/login" style={{ textDecoration: 'none' }}>
                         <button style={{
                             display: block, width: 'fit-content', height: 'max-content', border: 'none', borderRadius: '20px',
                             cursor: 'pointer', marginRight: '20px',
                             background: '#4A5E84', color: 'white', marginLeft: '25px', marginTop: '21px', marginBottom: '21px'
                         }}>Login / Sign Up</button>
+                    </Link>
+                    <Link to={route} style={{ display: none }}>
+                        <img id="dp" src={userImage} alt="" />
                     </Link>
                     <button onClick={() => handleLogOut()} style={{
                         display: none,

@@ -1,21 +1,13 @@
-import React, { useContext } from "react";
-import { Store } from "../context/store";
-import { Icon } from '@iconify/react';
-import { Link } from "react-router-dom";
+import React from "react";
 
 function AboutEvent(props) {
-    let store = useContext(Store);
-    let route = '/event/' + props.id
     return <>
         <div>
-            {/* <div className="flex"> */}
-            <div style={{
+            <div id="ate" style={{
                 width: '522px', height: '411px', marginRight: '50px', fontSize: '16px',
-                lineHeight: '28px'
+                lineHeight: '50px'
             }}> {props.about}
             </div>
-
-            {/* </div> */}
         </div>
     </>
 }

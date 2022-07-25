@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
-import { Store } from "../context/store";
+import React from "react";
 import { Icon } from '@iconify/react';
 
 function SingleEventOne(props) {
-    let store = useContext(Store);
     return <>
         <div className="eventcardmain">
             <div className="eventcard flex">

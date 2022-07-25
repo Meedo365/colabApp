@@ -1,11 +1,6 @@
-import React, { useContext } from "react";
-import { Store } from "../context/store";
-import { Icon } from '@iconify/react';
-import { Link } from "react-router-dom";
+import React from "react";
 
 function Attendees(props) {
-    let store = useContext(Store);
-    let route = '/event/' + props.id
     return <>
         <div className="flex attendCard">
             <img src={props.image} />

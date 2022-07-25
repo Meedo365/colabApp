@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navv from "../components/nav";
 import SingleEventOne from "../components/singleEventOne";
-import { Store } from "../context/store";
 import { useNavigate, useParams } from 'react-router-dom';
 import AboutEvent from "../components/aboutEvent";
 import Attendees from "../components/attendeeEvent";
@@ -9,19 +8,18 @@ import SayingEvent from "../components/sayingEvent";
 import MyVerticallyCenteredModal from "../components/modal";
 
 function OneEvent() {
-    let store = useContext(Store);
-    let [location, SetLocation] = useState([]);
+    let [, SetLocation] = useState([]);
     let [myevents, SetAllEvents] = useState([]);
     let [mycomments, SetAllComments] = useState([]);
     let [attending, SetAttending] = useState([]);
-    let [eventdate, SetEventDate] = useState([]);
+    let [, SetEventDate] = useState([]);
     let [none, SetNone] = useState('none');
     let [none1, SetNone1] = useState('');
     let [none2, SetNone2] = useState('none');
     let [block, SetBlock] = useState('inline');
     let [block1, SetBlock1] = useState('inline');
     let [attendId, SetAttend] = useState('');
-    let [whitee, SetWhitee] = useState('nowrap');
+
     let id = useParams();
     let [modalShow, setModalShow] = useState(false);
     let navigate = useNavigate()
@@ -123,6 +121,7 @@ function OneEvent() {
                 return result
             })
     };
+
     let loadLocation = () => {
         let url = "https://colab-endpoints.herokuapp.com/events";
 
@@ -208,9 +207,9 @@ function OneEvent() {
         }
     };
 
-    let commentSize = () => {
-        SetWhitee('normal');
-    };
+    // let commentSize = () => {
+    //     SetWhitee('normal');
+    // };
 
     return <>
         <div className="cen" >
@@ -281,15 +280,17 @@ function OneEvent() {
                                 </div>
                                 {mycomments.map((e, i) => {
                                     if (id.id === e.event_id._id) {
+                                        console.log(e.user_id)
                                         return (
                                             <SayingEvent
                                                 key={e._id}
+                                                id={e.user_id._id}
                                                 pic={e.user_id.image}
                                                 alt={e.user_id.fullname[0]}
                                                 comment={e.commentText}
                                                 name={e.user_id.fullname}
-                                                white={whitee}
-                                                read={() => commentSize()}
+                                            // white={whitee}
+                                            // read={() => commentSize()}
                                             />
                                         )
 

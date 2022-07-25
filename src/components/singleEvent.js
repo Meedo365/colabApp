@@ -1,15 +1,12 @@
-import React, { useContext } from "react";
-import { Store } from "../context/store";
+import React from "react";
 import { Icon } from '@iconify/react';
 import { Link } from "react-router-dom";
 
 function SingleEvent(props) {
-    let store = useContext(Store);
     let route = '/event/' + props.id
     return <>
         <div className="eventcardmain">
             <h3>{props.date}</h3>
-            <hr />
             <div className="eventcard flex">
                 <Link to={route}>
                     <img src={props.image} alt="" />
@@ -33,6 +30,7 @@ function SingleEvent(props) {
                 </div>
                 <hr />
             </div>
+            <hr />
         </div>
     </>
 }
